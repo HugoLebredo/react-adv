@@ -7,6 +7,12 @@ const product = {
     id: '1'
 }
 
+const product2 = {
+  title: 'Coffee Mug - Meme',
+  img: './public/coffee-mug2.png',
+  id: '2'
+}
+
 export const ShoppingPage = () => {
   return (
     <div>
@@ -23,16 +29,10 @@ export const ShoppingPage = () => {
               <ProductButtons className = 'custom-buttons'/>
             </ProductCard>
 
-            <ProductCard product = {product} className = 'bg-dark text-bold'>
+            <ProductCard product = {product2} className = 'bg-dark text-bold'>
               <ProductCard.Image className = 'custom-image'/>
               <ProductCard.Title title='helllo' className = 'text-white'/>
               <ProductCard.Buttons  className = 'custom-buttons'/>
-            </ProductCard>
-
-            <ProductCard product = {product} style={{backgroundColor: '#70d1f8'}}>
-              <ProductCard.Image style={{boxShadow: '10px 10px 10px rgba(0,0,0,0.2)'}}/>
-              <ProductCard.Title style={{fontWeight: 'bold'}}/>
-              <ProductCard.Buttons style={{display: 'flex', justifyContent: 'end'}}/>
             </ProductCard>
         </div>
     </div>
