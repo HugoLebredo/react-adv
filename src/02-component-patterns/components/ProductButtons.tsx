@@ -12,7 +12,7 @@ export const ProductButtons = ({className, style}:Props) => {
 
     const {counter, increaseBy, maxCount} = useContext(ProductContext)
 
-    const isMaxReached = useCallback(
+    const isMaxCountReached = useCallback(
         () =>!!maxCount && counter === maxCount 
         ,[counter, maxCount]
       )
@@ -21,7 +21,7 @@ export const ProductButtons = ({className, style}:Props) => {
         <div className = {`${styles.buttonsContainer} ${className}`} style={style}>
             <button className={styles.buttonMinus} onClick = {() => increaseBy(-1)} >-</button>
             <div className={styles.countLabel}>{counter}</div>
-            <button className={ `${styles.buttonAdd} ${isMaxReached() && styles.disabled}`} onClick = {() => increaseBy(1)}>+</button>
+            <button className={ `${styles.buttonAdd} ${isMaxCountReached() && styles.disabled}`} onClick = {() => increaseBy(1)}>+</button>
         </div>
     )
 }
